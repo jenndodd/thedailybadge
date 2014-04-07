@@ -5,7 +5,7 @@ class SessionController < ApplicationController
   end
 
   def create
-
+   
     # find if any user has that username
     user = User.find_by(username: params[:username])
     
