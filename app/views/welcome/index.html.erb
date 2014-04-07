@@ -1,0 +1,14 @@
+<h1>Hello World</h1>
+
+<% if session[:user_id].nil? %>
+  <ul>
+    <li><%= link_to "Join us!", new_user_path %></li>
+    <li><%= link_to "Login", "/login" %></li>
+  </ul>
+<% else %>
+  <% user = User.find(session[:user_id]) %>
+  <ul>
+    <li><%= link_to "My Profile", user_path(user), id: 'profile'  %></li>
+    <li><%= link_to "Logout", session_path, method: :delete %></li>
+  </ul>
+<% end %>
