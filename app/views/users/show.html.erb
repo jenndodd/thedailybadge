@@ -1,5 +1,7 @@
 <h2>Welcome <%= @user.first_name %>!</h2>
 
+<button><%= link_to "Add a Badge", new_user_badge_path(@user) %></button>
+
 <ul id="badge_list" class="badge-list">
   <% @user.badges.each do |b| %>
     <li>

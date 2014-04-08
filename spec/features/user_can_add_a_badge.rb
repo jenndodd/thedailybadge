@@ -21,9 +21,29 @@ describe "user can see badge details" do
 
     expect(page).to have_content "New Badge"
 
-    fill_in :title, with: "Eat 50 chicken wings"
-    fill_in :description, with: "Take the challenge. Eat the wings. Be victorious!"
-    
+    # badge info
+    fill_in :badge_title, with: "Eat 100 chicken wings"
+    fill_in :badge_description, with: "Take the challenge. Eat the wings. Be victorious!"
+
+    #checkpoints
+    fill_in :badge_checkpoints_attributes_0_title, with: "Eat 25 wings"
+    fill_in :badge_checkpoints_attributes_1_title, with: "Eat 50 wings"
+    fill_in :badge_checkpoints_attributes_2_title, with: "Eat 75 wings"
+    fill_in :badge_checkpoints_attributes_3_title, with: "Eat 100 wings"
+
+    click_button "Add"
+
+    visit "/users/#{user.id}"
+
+    within "#badge_list" do
+      expect(page).to have_content "Eat 100 chicken wings"
+    end
+
+    click_link( 'Eat 100 chicken wings')
+
+    within "#checkpoint_list" do
+      expect(page).to have_content "Eat 75 wings"
+    end 
 
   end
 

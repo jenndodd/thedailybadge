@@ -1,0 +1,31 @@
+<%= form_for [@user, (setup_badge @badge)], :html => { :class => "badge-form"} do |f| %>
+
+  <div class="label-input">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="label-input">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  
+  <h3>Checkpoints</h3>
+  <%= f.fields_for :checkpoints do |ff| %>
+
+    <div class="label-input">
+      <%= ff.label :title %>
+      <%= ff.text_field :title %>
+    </div>
+
+    <div class="label-input">
+      <%= ff.label :description %>
+      <%= ff.text_field :description %>
+    </div>  
+      
+  <% end %>
+
+  
+
+  <%= f.submit "Add" %>
+<% end %>
