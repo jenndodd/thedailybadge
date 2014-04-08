@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "user can see their dashboard" do
-  let!(:user) { User.create(email: "tom@tom.gmail.com", username: "tom", first_name: "Tom", last_name: "Tom", password: "tomtom", password_confirmation: "tomtom") }
+  let!(:user) { FactoryGirl.create(:user) }
 
   it "views their dashboard" do
     #logs Tom in.

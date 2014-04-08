@@ -7,7 +7,20 @@
 </head>
 <body>
 
-<%= yield %>
+  <% if session[:user_id].nil? %>
+    <ul>
+      <li><%= link_to "Join us!", new_user_path %></li>
+      <li><%= link_to "Login", "/login" %></li>
+    </ul>
+  <% else %>
+  <% user = User.find(session[:user_id]) %>
+    <ul>
+      <li><%= link_to "My Dashboard", user_path(user), id: 'dashboard'  %></li>
+      <li><%= link_to "Logout", session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+
+  <%= yield %>
 
 <%= javascript_include_tag "application" %>
 
