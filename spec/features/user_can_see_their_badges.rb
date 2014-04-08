@@ -1,0 +1,1 @@
+user_can_see_their_badges.rb

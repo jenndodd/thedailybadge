@@ -7,7 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.delete_all
-Badges.delete_all
-Checkpoints.delete_all
+Badge.delete_all
+Checkpoint.delete_all
 
-User.create(username: "jennyd", email: "jenny@d.com", first_name: "Jenny", last_name: "D", password: "jennyd", password_confirmation: "jennyd")
+jennyd = User.create(username: "jennyd", email: "jenny@d.com", first_name: "Jenny", last_name: "D", password: "jennyd", password_confirmation: "jennyd")
+
+badger = Badge.create(user_id: jennyd.id, title: "Make a site", description: "Just a badge")
+Checkpoint.create(badge_id: badger.id, title: "Put some Ruby on some Rails")
+Checkpoint.create(badge_id: badger.id, title: "Style it")
+Checkpoint.create(badge_id: badger.id, title: "Show mom")
+
+badger1 = Badge.create(user_id: jennyd.id, title: "Run 6 miles nonstop", description: "Operation: Run Forrest")
+Checkpoint.create(badge_id: badger1.id, title: "Run 1 mile")
+Checkpoint.create(badge_id: badger1.id, title: "Run 3 miles nonstop")
+Checkpoint.create(badge_id: badger1.id, title: "Run 5 miles nonstop")
+Checkpoint.create(badge_id: badger1.id, title: "Run 6 miles nonstop")
