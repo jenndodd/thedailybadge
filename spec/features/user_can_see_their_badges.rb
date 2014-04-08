@@ -3,9 +3,9 @@ require 'spec_helper'
 describe "user can see their badges" do
 
   let!(:user) { FactoryGirl.create(:user)}
-  let!(:badge) { FactoryGirl.create(:badge, user_id: user.id) }
-  let!(:badge) { FactoryGirl.create(:badge, user_id: user.id) }
-  let!(:badge) { FactoryGirl.create(:badge, user_id: user.id) }
+  let!(:badge1) { FactoryGirl.create(:badge, user_id: user.id) }
+  let!(:badge2) { FactoryGirl.create(:badge, user_id: user.id) }
+  let!(:badge3) { FactoryGirl.create(:badge, user_id: user.id) }
 
   it "sees their badges" do
 
@@ -13,6 +13,13 @@ describe "user can see their badges" do
     visit root_path
 
     click_link "dashboard"
+    save_and_open_page
+
+    within "#badge_list" do
+      expect(page).to have_content badge1.title
+      expect(page).to have_content badge2.title
+      expect(page).to have_content badge3.title
+    end
 
   end
 

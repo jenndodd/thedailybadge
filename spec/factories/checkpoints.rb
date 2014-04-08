@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :checkpoint do
-    title { Faker::Lorem.phrase }
-    description { Faker::Lorem.sentence }
+    title { Faker::HipsterIpsum.phrase }
+    description { Faker::HipsterIpsum.sentence }
     association :badge
   end
 end

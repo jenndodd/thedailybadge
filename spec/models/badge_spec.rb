@@ -8,7 +8,6 @@ describe Badge do
   it { should have_many(:checkpoints)}
 
   it { should validate_presence_of(:title)}
-  it { should validate_presence_of(:created_at)}
 
   it { should validate_uniqueness_of(:title) }
 
