@@ -1,7 +1,9 @@
 <h2>Welcome <%= @user.first_name %>!</h2>
 
 <ul id="badge_list" class="badge-list">
-  
+  <% @user.badges.each do |badge| %>
+    <li><%= badge.title %></li>
+  <% end %>
 </ul>
 
 <div id="badge_detail" class="badge-detail">
