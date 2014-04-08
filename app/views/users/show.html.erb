@@ -1,14 +1,12 @@
 <h2>Welcome <%= @user.first_name %>!</h2>
 
 <ul id="badge_list" class="badge-list">
-  <% @user.badges.each do |badge| %>
-    <li><%= badge.title %></li>
+  <% @user.badges.each do |b| %>
+    <li>
+      <%= link_to b.title, user_badge_path( @user.id, b.id ), id: "badge"+b.id.to_s %>
+    </li>
   <% end %>
 </ul>
-
-<div id="badge_detail" class="badge-detail">
-
-</div>
 
 <script type="template" class="badge-list-template">
 

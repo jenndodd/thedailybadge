@@ -6,33 +6,24 @@ describe "user can see badge details" do
   let!(:badge1) { FactoryGirl.create(:badge, user_id: user.id) }
   let!(:badge2) { FactoryGirl.create(:badge, user_id: user.id) }
   let!(:badge3) { FactoryGirl.create(:badge, user_id: user.id) }
-  let!(:checkpoint1) { FactoryGirl.create(:checkpoint, badge_id: badge1.id) }
-  let!(:checkpoint2) { FactoryGirl.create(:checkpoint, badge_id: badge1.id) }
-  let!(:checkpoint3) { FactoryGirl.create(:checkpoint, badge_id: badge1.id) }
-  let!(:checkpoint4) { FactoryGirl.create(:checkpoint, badge_id: badge1.id) }
 
-
-  it "sees badge details" do
-
+  it "lets a user add a badge" do
+    
     login(user)
-    visit root_path
-
-    click_link "dashboard"
 
     within "#badge_list" do
       expect(page).to have_content badge1.title
       expect(page).to have_content badge2.title
       expect(page).to have_content badge3.title
     end
-    click_link( 'badge'+badge1.id.to_s)
 
-    within "#badge_detail" do
-      expect(page).to have_content badge1.description
-    end
+    click_link "Add a Badge"
 
-    within "#checkpoint_list" do
-      expect(page).to have_content checkpoint3.title
-    end 
+    expect(page).to have_content "New Badge"
+
+    fill_in :title, with: "Eat 50 chicken wings"
+    fill_in :description, with: "Take the challenge. Eat the wings. Be victorious!"
+    
 
   end
 
@@ -43,4 +34,4 @@ describe "user can see badge details" do
     click_button "Log in!"
   end
 
-end  
+end

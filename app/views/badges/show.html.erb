@@ -1,0 +1,13 @@
+<div id="badge_detail">
+  <h1> <%= @badge.title %> </h1>
+  <p> <%= @badge.description %> </p>
+  
+  <ul id="checkpoint_list">
+    <% @badge.checkpoints.each do |c| %>
+      <li>
+        <%= c.title %>
+      </li>
+    <% end %>
+  </ul>
+  
+</div>
