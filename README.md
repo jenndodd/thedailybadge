@@ -13,8 +13,8 @@ Every day the app will post a daily badge for badgers to earn (to keep people co
 
 ## Walkthrough Wireframes
 
-![alt text](https://github.com/jenndodd/thedailybadge/tree/master/app/assets/images/frontPage.jpg "Front Page")
+![front page](./app/assets/images/frontPage.jpg)
 
-![alt text](https://github.com/jenndodd/thedailybadge/tree/master/app/assets/images/dashboardPage1.jpg "Dashboard 1")
+![dashboard](./app/assets/images/dashboardPage1.jpg)
 
-![alt text](https://github.com/jenndodd/thedailybadge/tree/master/app/assets/images/dashboardPage2.jpg "Dashboard 2")
+![dashboard](./app/assets/images/dashboardPage2.jpg)
