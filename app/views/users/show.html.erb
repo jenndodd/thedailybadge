@@ -1,6 +1,8 @@
 <%= include_gon %>
 
-<h2>Welcome <%= @user.first_name %>!</h2>
+<h1>Welcome <%= @user.first_name %>!</h1>
+
+<h2>Badges</h2>
 
 <button><%= link_to "Add a Badge", new_user_badge_path(@user) %></button>
 
@@ -9,5 +11,8 @@
 </ul>
 
 <script type="text/template" class="badgetemplate">
-  <%%= badge.get("title") %>
+  <li>
+    <a href="<%= @user.id %>/badges/<%%= badge.get('id') %>"><%%= badge.get('title') %></a>
+  </li>
+
 </script>

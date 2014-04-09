@@ -3,6 +3,7 @@ class BadgesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @badge = Badge.new
+    gon.currentUser = @user
 
     render(:new)
   end
