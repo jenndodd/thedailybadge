@@ -1,7 +1,7 @@
 <div id="badge_detail">
   <h1> <%= @badge.title %> </h1>
   <p> <%= @badge.description %> </p>
-  
+  <h2>Checkpoints</h2>
   <ul id="checkpoint_list">
     <% @badge.checkpoints.each do |c| %>
       <li>

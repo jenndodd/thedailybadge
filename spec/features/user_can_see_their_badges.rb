@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "user can see their badges" do
+describe "user can see their badges", :js => true do
 
   let!(:user) { FactoryGirl.create(:user)}
   let!(:badge1) { FactoryGirl.create(:badge, user_id: user.id) }

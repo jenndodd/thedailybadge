@@ -18,7 +18,7 @@ describe "user can see badge details" do
     visit root_path
 
     click_link "dashboard"
-
+    save_and_open_page
     within "#badge_list" do
       expect(page).to have_content badge1.title
       expect(page).to have_content badge2.title

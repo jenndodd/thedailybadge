@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "user can see their dashboard" do
+describe "user can see their dashboard", :js => true do
   let!(:user) { FactoryGirl.create(:user) }
 
   it "views their dashboard" do
@@ -12,7 +12,6 @@ describe "user can see their dashboard" do
     click_link "dashboard"
 
     expect(page).to have_content user.first_name
-
   end
 
   def login(user)

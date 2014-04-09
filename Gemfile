@@ -55,6 +55,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'simplecov'
-  gem "selenium-webdriver"
+  gem 'capybara-webkit'
   gem "database_cleaner"
 end
