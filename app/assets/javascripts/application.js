@@ -18,3 +18,11 @@
 //= require_tree ./backbone/collections
 //= require_tree ./backbone/views
 //= require_tree ./backbone/routers
+//= require_self
+
+$(document).ready(function() {
+  var badges = new BadgeCollection();
+  var listView = new BadgeListView({collection: badges});
+  // var formView = new FormView({collection: badges});
+  badges.fetch({ reset: true });
+});

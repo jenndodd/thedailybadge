@@ -7,6 +7,13 @@ class BadgesController < ApplicationController
     render(:new)
   end
 
+  def index
+    @user = User.find(params[:user_id])
+    @badges = @user.badges
+
+    render json: @badges
+  end
+
   def create
     @user = User.find(params[:user_id])
     params.permit!

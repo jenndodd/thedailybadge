@@ -1,7 +1,10 @@
 class WelcomeController < ApplicationController
 
   def index
-    render(:index)
+    @user = current_user
+
+    gon.currentUser = @user
+    @user render(:index)
   end
 
 end

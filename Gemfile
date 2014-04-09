@@ -41,6 +41,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
+gem 'gon', '~> 5.0.4'
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
@@ -53,4 +55,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'simplecov'
+  gem "selenium-webdriver"
+  gem "database_cleaner"
 end

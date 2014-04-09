@@ -21,6 +21,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    gon.currentUser = @user
+
+    render :show
   end
 
   private
